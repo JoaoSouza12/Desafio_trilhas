@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560" role="img" aria-label="Ilustração editorial do ritual de extração Vereda com coador cerâmico, jarra de vidro e relevo das serras brasileiras">
+  <defs>
+    <linearGradient id="bgCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#EFE7D8" />
+    </linearGradient>
+    <linearGradient id="coffeeLiquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8A3417" />
+      <stop offset="45%" stop-color="#4A1F12" />
+      <stop offset="100%" stop-color="#231A16" />
+    </linearGradient>
+    <linearGradient id="ceramicBody" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#C8643B" />
+      <stop offset="55%" stop-color="#A64622" />
+      <stop offset="100%" stop-color="#6B2B14" />
+    </linearGradient>
+    <linearGradient id="sunGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5A962" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#B85028" stop-opacity="0.12" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo de ficha catalográfica -->
+  <rect x="8" y="8" width="624" height="544" rx="18" fill="url(#bgCard)" stroke="#231A16" stroke-width="2" />
+  <rect x="22" y="22" width="596" height="516" rx="12" fill="none" stroke="#D8CBB8" stroke-width="1.2" />
+
+  <!-- Grade técnica sutil de fundo -->
+  <g stroke="#E3D8C8" stroke-width="1">
+    <line x1="22" y1="110" x2="618" y2="110" />
+    <line x1="22" y1="220" x2="618" y2="220" />
+    <line x1="22" y1="330" x2="618" y2="330" />
+    <line x1="22" y1="440" x2="618" y2="440" />
+    <line x1="160" y1="22" x2="160" y2="538" />
+    <line x1="320" y1="22" x2="320" y2="538" />
+    <line x1="480" y1="22" x2="480" y2="538" />
+  </g>
+
+  <!-- Arco solar e topografia de altitude ao fundo -->
+  <circle cx="320" cy="235" r="158" fill="url(#sunGlow)" />
+  <circle cx="320" cy="235" r="158" fill="none" stroke="#B85028" stroke-width="1" stroke-dasharray="5 5" />
+
+  <!-- Curvas de nível (1.100m a 1.450m) -->
+  <path d="M 45 390 C 125 320, 210 350, 310 300 C 410 250, 505 310, 595 275" fill="none" stroke="#D8CBB8" stroke-width="2" />
+  <path d="M 45 415 C 145 355, 225 385, 325 335 C 425 285, 515 340, 595 305" fill="none" stroke="#C4B299" stroke-width="1.8" />
+  <path d="M 45 440 C 165 395, 240 410, 340 370 C 440 330, 520 375, 595 345" fill="none" stroke="#B85028" stroke-width="1.4" stroke-opacity="0.45" />
+
+  <!-- Metadados técnicos de cabeçalho da ilustração -->
+  <text x="42" y="54" font-family="Georgia, serif" font-size="12" fill="#5C4338" letter-spacing="2">CADERNO DE PROVA · SAFRA 2026</text>
+  <text x="462" y="54" font-family="monospace" font-size="12" fill="#B85028" font-weight="bold">SCA 87.5 PTS</text>
+
+  <text x="42" y="88" font-family="monospace" font-size="11" fill="#63534A">PROPORÇÃO: 1:15 (20g / 300ml)</text>
+  <text x="42" y="104" font-family="monospace" font-size="11" fill="#63534A">TEMPERATURA: 93 °C · MOAGEM MÉDIA</text>
+
+  <!-- Ramo botânico de Coffea Arabica à esquerda -->
+  <g transform="translate(86, 175)" stroke="#231A16" stroke-width="1.8" fill="none">
+    <path d="M 0 160 Q 30 90 65 20" stroke="#3B5244" stroke-width="2.5" />
+    <!-- Folhas -->
+    <path d="M 22 115 C -20 105, -30 65, 8 68 C 28 70, 32 95, 22 115 Z" fill="#3B5244" fill-opacity="0.88" stroke="#231A16" />
+    <path d="M 44 68 C 5 55, 0 18, 35 24 C 52 27, 52 50, 44 68 Z" fill="#4D6A58" fill-opacity="0.85" stroke="#231A16" />
+    <path d="M 28 100 C 68 95, 85 125, 48 135 C 32 139, 25 118, 28 100 Z" fill="#3B5244" fill-opacity="0.82" stroke="#231A16" />
+    <!-- Cerejas de café maduras -->
+    <circle cx="34" cy="88" r="9" fill="#B85028" stroke="#231A16" stroke-width="1.8" />
+    <circle cx="20" cy="96" r="8" fill="#963B18" stroke="#231A16" stroke-width="1.8" />
+    <circle cx="48" cy="52" r="8.5" fill="#C85D32" stroke="#231A16" stroke-width="1.8" />
+  </g>
+
+  <!-- Vapor aromático ascendente -->
+  <g fill="none" stroke="#B85028" stroke-width="2" stroke-linecap="round" stroke-opacity="0.65">
+    <path d="M 295 140 C 282 115, 312 95, 298 68" />
+    <path d="M 322 132 C 308 102, 340 82, 324 52" />
+    <path d="M 348 142 C 336 118, 362 98, 350 74" />
+  </g>
+
+  <!-- Filtro de papel plissado saindo do coador -->
+  <polygon points="242,164 398,164 378,200 262,200" fill="#FAF7F2" stroke="#231A16" stroke-width="2" />
+  <line x1="275" y1="164" x2="285" y2="195" stroke="#D8CBB8" stroke-width="1.5" />
+  <line x1="320" y1="164" x2="320" y2="195" stroke="#D8CBB8" stroke-width="1.5" />
+  <line x1="365" y1="164" x2="355" y2="195" stroke="#D8CBB8" stroke-width="1.5" />
+
+  <!-- Coador Vértice em Cerâmica (V60 Autoral) -->
+  <g>
+    <!-- Alça lateral em cerâmica -->
+    <path d="M 392 198 C 436 198, 436 258, 372 264" fill="none" stroke="#231A16" stroke-width="10" stroke-linecap="round" />
+    <path d="M 392 198 C 436 198, 436 258, 372 264" fill="none" stroke="#A64622" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Corpo cônico do coador -->
+    <polygon points="228,186 412,186 356,296 284,296" fill="url(#ceramicBody)" stroke="#231A16" stroke-width="2.5" stroke-linejoin="round" />
+
+    <!-- Ranhuras espirais visíveis em relevo sutil -->
+    <path d="M 248 192 Q 282 245 298 292" fill="none" stroke="#E5A962" stroke-width="1.4" stroke-opacity="0.55" />
+    <path d="M 282 192 Q 308 245 314 292" fill="none" stroke="#E5A962" stroke-width="1.4" stroke-opacity="0.55" />
+    <path d="M 322 192 Q 332 245 328 292" fill="none" stroke="#E5A962" stroke-width="1.4" stroke-opacity="0.55" />
+    <path d="M 365 192 Q 355 245 342 292" fill="none" stroke="#E5A962" stroke-width="1.4" stroke-opacity="0.55" />
+
+    <!-- Base / anel de apoio do coador -->
+    <rect x="256" y="294" width="128" height="14" rx="5" fill="#5C4338" stroke="#231A16" stroke-width="2.5" />
+  </g>
+
+  <!-- Jarra Servidora em Vidro Borossilicato -->
+  <g>
+    <!-- Alça de vidro -->
+    <path d="M 382 332 C 442 332, 446 426, 396 438" fill="none" stroke="#231A16" stroke-width="8" stroke-linecap="round" />
+    <path d="M 382 332 C 442 332, 446 426, 396 438" fill="none" stroke="#EFE7D8" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Contorno da jarra -->
+    <path d="M 272 308 L 368 308 L 404 422 C 412 452, 392 476, 358 476 L 282 476 C 248 476, 228 452, 236 422 Z" fill="#FAF7F2" fill-opacity="0.72" stroke="#231A16" stroke-width="2.5" stroke-linejoin="round" />
+
+    <!-- Fio de café sendo extraído -->
+    <line x1="320" y1="308" x2="320" y2="395" stroke="#8A3417" stroke-width="4" stroke-linecap="round" />
+    <circle cx="320" cy="356" r="3.5" fill="#B85028" />
+
+    <!-- Café extraído no fundo da jarra -->
+    <path d="M 245 396 Q 282 388 320 395 T 395 396 L 402 424 C 409 450, 390 470, 358 470 L 282 470 C 250 470, 231 450, 238 424 Z" fill="url(#coffeeLiquid)" />
+
+    <!-- Marcações graduadas de volume na jarra -->
+    <line x1="295" y1="355" x2="310" y2="355" stroke="#231A16" stroke-width="1.5" />
+    <text x="262" y="359" font-family="monospace" font-size="10" fill="#231A16">300ml</text>
+    <line x1="295" y1="385" x2="310" y2="385" stroke="#231A16" stroke-width="1.5" />
+    <text x="262" y="389" font-family="monospace" font-size="10" fill="#231A16">200ml</text>
+    <line x1="295" y1="418" x2="310" y2="418" stroke="#FAF7F2" stroke-width="1.5" />
+    <text x="262" y="422" font-family="monospace" font-size="10" fill="#FAF7F2">100ml</text>
+  </g>
+
+  <!-- Base de madeira maciça sob a jarra -->
+  <rect x="218" y="476" width="204" height="16" rx="6" fill="#5C4338" stroke="#231A16" stroke-width="2.5" />
+
+  <!-- Selo circular rotulado à direita -->
+  <g transform="translate(514, 178)">
+    <circle cx="0" cy="0" r="52" fill="#231A16" />
+    <circle cx="0" cy="0" r="46" fill="none" stroke="#E5A962" stroke-width="1.2" stroke-dasharray="3 3" />
+    <text x="0" y="-12" text-anchor="middle" font-family="monospace" font-size="10" fill="#E5A962" letter-spacing="1.5">TORRA FRESCA</text>
+    <text x="0" y="6" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#FAF7F2" font-weight="bold">SEMANAL</text>
+    <text x="0" y="24" text-anchor="middle" font-family="monospace" font-size="9" fill="#D8CBB8">LOTE NUMERADO</text>
+  </g>
+
+  <!-- Rodapé técnico da gravura -->
+  <rect x="42" y="502" width="556" height="24" rx="4" fill="#231A16" />
+  <text x="56" y="518" font-family="monospace" font-size="11" fill="#FAF7F2" letter-spacing="1">FIG. 01 — EXTRAÇÃO POR PERCOLAÇÃO GRAVITACIONAL · VEREDA TORREFAÇÃO</text>
+  <text x="584" y="518" text-anchor="end" font-family="monospace" font-size="11" fill="#E5A962">BRASIL</text>
+</svg>

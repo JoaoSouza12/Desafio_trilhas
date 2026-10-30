@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" width="420" height="340" role="img" aria-label="Objeto 05 Coador Vértice em Cerâmica de Alta Temperatura">
+  <defs>
+    <linearGradient id="clayGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#C8643B" />
+      <stop offset="60%" stop-color="#963B18" />
+      <stop offset="100%" stop-color="#5C4338" />
+    </linearGradient>
+  </defs>
+  <rect width="420" height="340" fill="#EFE7D8" />
+  <circle cx="210" cy="175" r="128" fill="#FAF7F2" stroke="#D8CBB8" stroke-width="1.5" />
+
+  <!-- Linhas de torno cerâmico -->
+  <ellipse cx="210" cy="272" rx="95" ry="20" fill="none" stroke="#D8CBB8" stroke-width="1.2" stroke-dasharray="4 3" />
+  <ellipse cx="210" cy="272" rx="68" ry="12" fill="#231A16" fill-opacity="0.14" />
+
+  <!-- Alça artesanal em grés -->
+  <path d="M 294 128 C 348 128, 348 214, 272 222" fill="none" stroke="#231A16" stroke-width="12" stroke-linecap="round" />
+  <path d="M 294 128 C 348 128, 348 214, 272 222" fill="none" stroke="#963B18" stroke-width="7" stroke-linecap="round" />
+
+  <!-- Boca elíptica superior com ranhuras internas -->
+  <polygon points="104,112 316,112 252,254 168,254" fill="url(#clayGrad)" stroke="#231A16" stroke-width="2.5" stroke-linejoin="round" />
+  <ellipse cx="210" cy="112" rx="106" ry="22" fill="#5C4338" stroke="#231A16" stroke-width="2.5" />
+  <ellipse cx="210" cy="112" rx="94" ry="16" fill="#3A2720" stroke="#E5A962" stroke-width="1" />
+
+  <!-- Ranhuras espirais no corpo -->
+  <path d="M 132 132 Q 168 195 184 250" fill="none" stroke="#E5A962" stroke-width="1.5" stroke-opacity="0.6" />
+  <path d="M 168 134 Q 194 195 202 250" fill="none" stroke="#E5A962" stroke-width="1.5" stroke-opacity="0.6" />
+  <path d="M 210 135 Q 220 195 218 250" fill="none" stroke="#E5A962" stroke-width="1.5" stroke-opacity="0.6" />
+  <path d="M 252 134 Q 242 195 234 250" fill="none" stroke="#E5A962" stroke-width="1.5" stroke-opacity="0.6" />
+
+  <!-- Base com anel de apoio para jarra/xícara -->
+  <rect x="136" y="252" width="148" height="18" rx="6" fill="#5C4338" stroke="#231A16" stroke-width="2.5" />
+  <line x1="152" y1="261" x2="268" y2="261" stroke="#E5A962" stroke-width="1.2" />
+
+  <!-- Etiqueta técnica superior -->
+  <rect x="24" y="24" width="112" height="28" rx="4" fill="#3B5244" />
+  <text x="80" y="42" text-anchor="middle" font-family="monospace" font-size="10.5" font-weight="bold" fill="#FAF7F2">CERÂMICA 1280°C</text>
+</svg>

@@ -1,0 +1,1330 @@
+/* ==========================================================================
+   VEREDA — MICROTORREFAÇÃO & OBJETOS DE EXTRAÇÃO
+   Design System Editorial & Artesanal Contemporâneo
+   ========================================================================== */
+
+/* 1. VARIÁVEIS DO DESIGN SYSTEM (:root)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta de Cores Obrigatória */
+  --cor-principal: #231A16;         /* Espresso Profundo / Torra Escura */
+  --cor-secundaria: #5C4338;        /* Casca de Cacau / Argila Tabaco */
+  --cor-destaque: #B85028;          /* Terracota Cereja Madura */
+  --cor-destaque-hover: #963B18;    /* Cereja Torrada Intensa */
+  --cor-fundo: #F6F1E7;             /* Papel Algodão Cru / Pergaminho */
+  --cor-superficie: #EFE7D8;        /* Areia de Terreiro / Kraft Claro */
+  --cor-superficie-elevada: #FAF7F2;/* Porcelana Marfim */
+  --cor-texto-principal: #231A16;   /* Espresso Profundo */
+  --cor-texto-secundario: #5E4E45;  /* Cinza Umburana */
+
+  /* Cores de Apoio da Identidade */
+  --cor-botanico: #3B5244;          /* Verde Folha de Cafeeiro */
+  --cor-ambar: #E5A962;             /* Ocre Mel / Ouro Velho */
+  --cor-borda: #D8CBB8;             /* Linha de Ficha Catalográfica */
+  --cor-borda-forte: #231A16;       /* Traço Editorial Principal */
+
+  /* Tipografia com Fallbacks Seguros de Sistema */
+  --fonte-titulo: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --fonte-corpo: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  --fonte-mono: "Cascadia Mono", "Consolas", "Courier New", monospace;
+
+  /* Escala de Espaçamentos */
+  --espaco-2xs: 0.375rem; /* 6px */
+  --espaco-xs: 0.625rem;  /* 10px */
+  --espaco-sm: 1rem;      /* 16px */
+  --espaco-md: 1.5rem;    /* 24px */
+  --espaco-lg: 2.25rem;   /* 36px */
+  --espaco-xl: 3.5rem;    /* 56px */
+  --espaco-2xl: 5rem;     /* 80px */
+
+  /* Bordas, Raios e Elevação */
+  --raio-sm: 6px;
+  --raio-md: 12px;
+  --raio-lg: 18px;
+  --raio-pilula: 999px;
+  --borda-fina: 1px solid var(--cor-borda);
+  --borda-editorial: 1.5px solid var(--cor-borda-forte);
+  --sombra-card: 0 10px 28px -12px rgba(35, 26, 22, 0.12);
+  --sombra-editorial: 4px 4px 0 var(--cor-principal);
+  --sombra-editorial-hover: 6px 6px 0 var(--cor-principal);
+
+  /* Transições */
+  --transicao-padrao: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 2. RESET, BASE E ACESSIBILIDADE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-corpo);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transicao-padrao), background-color var(--transicao-padrao);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+code {
+  font-family: var(--fonte-mono);
+  font-size: 0.88em;
+  background-color: var(--cor-superficie);
+  padding: 0.12rem 0.38rem;
+  border-radius: 4px;
+  border: 1px solid var(--cor-borda);
+}
+
+/* Foco visível claro para navegação por teclado */
+:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+/* Link de pular para o conteúdo */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--espaco-sm);
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie-elevada);
+  padding: var(--espaco-xs) var(--espaco-md);
+  border-radius: var(--raio-sm);
+  font-weight: 700;
+  z-index: 1000;
+  transition: top var(--transicao-padrao);
+}
+
+.skip-link:focus {
+  top: var(--espaco-sm);
+}
+
+/* 3. LAYOUT E CONTAINERS GERAIS
+   -------------------------------------------------------------------------- */
+.container {
+  width: min(1200px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-block: var(--espaco-2xl);
+}
+
+.section-header {
+  margin-bottom: var(--espaco-xl);
+  border-bottom: var(--borda-fina);
+  padding-bottom: var(--espaco-md);
+}
+
+.section-header__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-sm);
+  margin-bottom: var(--espaco-xs);
+}
+
+.section-tag {
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cor-destaque);
+  font-weight: 700;
+}
+
+.section-number {
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+  background-color: var(--cor-superficie);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--raio-pilula);
+  border: var(--borda-fina);
+}
+
+.section-header__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--espaco-md);
+}
+
+.section-title {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  line-height: 1.18;
+  color: var(--cor-principal);
+  max-width: 26ch;
+}
+
+.section-subtitle {
+  margin-top: var(--espaco-xs);
+  color: var(--cor-texto-secundario);
+  font-size: 1.04rem;
+  max-width: 60ch;
+}
+
+/* 4. FAIXA SUPERIOR & CABEÇALHO (HEADER)
+   -------------------------------------------------------------------------- */
+.top-banner {
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie-elevada);
+  font-size: 0.875rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid rgba(229, 169, 98, 0.28);
+}
+
+.top-banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-xs) var(--espaco-md);
+}
+
+.top-banner__badge {
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  background-color: var(--cor-botanico);
+  color: var(--cor-superficie-elevada);
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.top-banner__text {
+  flex: 1;
+  min-width: 240px;
+}
+
+.top-banner__text strong {
+  color: var(--cor-ambar);
+}
+
+.top-banner__link {
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  color: var(--cor-ambar);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.top-banner__link:hover {
+  color: var(--cor-superficie-elevada);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(246, 241, 231, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: var(--borda-editorial);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-md);
+  min-height: 78px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand__logo {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  transition: transform var(--transicao-padrao);
+}
+
+.brand:hover .brand__logo {
+  transform: rotate(-6deg) scale(1.04);
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand__name {
+  font-family: var(--fonte-titulo);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.05;
+  color: var(--cor-principal);
+}
+
+.brand__tagline {
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-texto-secundario);
+}
+
+/* Selo de destaque visual do cabeçalho */
+.roast-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--cor-superficie-elevada);
+  border: var(--borda-fina);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--raio-pilula);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--cor-secundaria);
+}
+
+.roast-status__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--cor-destaque);
+  box-shadow: 0 0 0 3px rgba(184, 80, 40, 0.22);
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-md);
+}
+
+.site-nav__link {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--cor-principal);
+  padding: 0.35rem 0.2rem;
+  position: relative;
+}
+
+.site-nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-destaque);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transicao-padrao);
+}
+
+.site-nav__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.site-nav__link--cta {
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie-elevada);
+  padding: 0.55rem 1.05rem;
+  border-radius: var(--raio-sm);
+  border: 1.5px solid var(--cor-principal);
+}
+
+.site-nav__link--cta::after {
+  display: none;
+}
+
+.site-nav__link--cta:hover {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: var(--cor-superficie-elevada);
+}
+
+/* Botão menu mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: var(--borda-editorial);
+  border-radius: var(--raio-sm);
+  background-color: var(--cor-superficie-elevada);
+}
+
+.menu-toggle__bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-principal);
+  transition: transform var(--transicao-padrao), opacity var(--transicao-padrao);
+}
+
+/* 5. BOTÕES E COMPONENTES PADRÃO
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.96rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--raio-sm);
+  border: var(--borda-editorial);
+  transition:
+    transform var(--transicao-padrao),
+    box-shadow var(--transicao-padrao),
+    background-color var(--transicao-padrao),
+    color var(--transicao-padrao);
+}
+
+.btn--primary {
+  background-color: var(--cor-destaque);
+  color: var(--cor-superficie-elevada);
+  box-shadow: var(--sombra-editorial);
+}
+
+.btn--primary:hover {
+  background-color: var(--cor-destaque-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--sombra-editorial-hover);
+}
+
+.btn--secondary {
+  background-color: var(--cor-superficie-elevada);
+  color: var(--cor-principal);
+}
+
+.btn--secondary:hover {
+  background-color: var(--cor-superficie);
+  transform: translateY(-2px);
+}
+
+.btn--card {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  background-color: var(--cor-superficie);
+  color: var(--cor-principal);
+}
+
+.btn--card:hover {
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie-elevada);
+}
+
+.btn--simulate {
+  width: 100%;
+  font-size: 1.12rem;
+  padding: 1.1rem 1.8rem;
+  background-color: var(--cor-destaque);
+  color: var(--cor-superficie-elevada);
+  box-shadow: var(--sombra-editorial);
+  letter-spacing: 0.02em;
+}
+
+.btn--simulate:hover {
+  background-color: var(--cor-destaque-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--sombra-editorial-hover);
+}
+
+.btn--simulate:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--cor-principal);
+}
+
+/* 6. SEÇÃO PRINCIPAL (HERO SECTION)
+   -------------------------------------------------------------------------- */
+.hero {
+  padding-block: var(--espaco-xl) var(--espaco-2xl);
+  border-bottom: var(--borda-editorial);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(229, 169, 98, 0.16), transparent 45%),
+    var(--cor-fundo);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: var(--espaco-xl);
+}
+
+.editorial-kicker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--cor-superficie);
+  border: var(--borda-fina);
+  border-radius: var(--raio-sm);
+  margin-bottom: var(--espaco-md);
+}
+
+.editorial-kicker__code {
+  color: var(--cor-destaque);
+  font-weight: 700;
+}
+
+.editorial-kicker__origin {
+  color: var(--cor-secundaria);
+}
+
+.hero__title {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.15rem, 4.2vw, 3.45rem);
+  line-height: 1.1;
+  color: var(--cor-principal);
+  margin-bottom: var(--espaco-md);
+  letter-spacing: -0.01em;
+}
+
+.hero__lead {
+  font-size: 1.12rem;
+  color: var(--cor-texto-secundario);
+  max-width: 54ch;
+  margin-bottom: var(--espaco-lg);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-sm);
+  margin-bottom: var(--espaco-lg);
+}
+
+.hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-sm);
+  padding-top: var(--espaco-md);
+  border-top: var(--borda-fina);
+}
+
+.hero__metric dt {
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cor-texto-secundario);
+}
+
+.hero__metric dd {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cor-principal);
+  margin-top: 0.15rem;
+}
+
+.hero__figure {
+  background-color: var(--cor-superficie-elevada);
+  padding: var(--espaco-sm);
+  border-radius: var(--raio-lg);
+  border: var(--borda-editorial);
+  box-shadow: var(--sombra-editorial);
+}
+
+.hero__image {
+  width: 100%;
+  border-radius: var(--raio-md);
+}
+
+.hero__caption {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--espaco-xs);
+  margin-top: var(--espaco-xs);
+  padding-inline: 0.25rem;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--cor-texto-secundario);
+}
+
+/* 7. CATÁLOGO DE PRODUTOS
+   -------------------------------------------------------------------------- */
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  font-family: var(--fonte-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--raio-pilula);
+  border: var(--borda-fina);
+  background-color: var(--cor-superficie-elevada);
+  color: var(--cor-texto-secundario);
+  transition: all var(--transicao-padrao);
+}
+
+.filter-chip:hover {
+  border-color: var(--cor-principal);
+  color: var(--cor-principal);
+}
+
+.filter-chip.is-active {
+  background-color: var(--cor-principal);
+  border-color: var(--cor-principal);
+  color: var(--cor-superficie-elevada);
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-lg);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cor-superficie-elevada);
+  border: var(--borda-editorial);
+  border-radius: var(--raio-md);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-editorial);
+}
+
+.product-card[hidden] {
+  display: none;
+}
+
+.product-card__top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background-color: var(--cor-superficie);
+  border-bottom: var(--borda-fina);
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+}
+
+.product-card__code {
+  color: var(--cor-secundaria);
+  font-weight: 700;
+}
+
+.product-card__badge {
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie-elevada);
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.product-card__badge--rare {
+  background-color: var(--cor-destaque);
+}
+
+.product-card__badge--craft {
+  background-color: var(--cor-botanico);
+}
+
+.product-card__media {
+  background-color: var(--cor-superficie);
+  border-bottom: var(--borda-fina);
+  overflow: hidden;
+}
+
+.product-card__img {
+  width: 100%;
+  aspect-ratio: 420 / 340;
+  object-fit: cover;
+  transition: transform 380ms ease;
+}
+
+.product-card:hover .product-card__img {
+  transform: scale(1.03);
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--espaco-md);
+}
+
+.product-card__category {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--cor-destaque);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.product-card__title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.32rem;
+  line-height: 1.25;
+  color: var(--cor-principal);
+  margin-bottom: 0.6rem;
+}
+
+.product-card__description {
+  font-size: 0.94rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espaco-sm);
+  flex: 1;
+}
+
+.product-card__notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: var(--espaco-md);
+}
+
+.product-card__notes li {
+  font-family: var(--fonte-mono);
+  font-size: 0.72rem;
+  background-color: var(--cor-fundo);
+  color: var(--cor-secundaria);
+  padding: 0.22rem 0.55rem;
+  border-radius: 4px;
+  border: var(--borda-fina);
+}
+
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-xs);
+  padding-top: var(--espaco-sm);
+  border-top: var(--borda-fina);
+}
+
+.product-card__price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__price-label {
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--cor-texto-secundario);
+}
+
+.product-card__price {
+  font-family: var(--fonte-titulo);
+  font-size: 1.45rem;
+  color: var(--cor-principal);
+  line-height: 1.1;
+}
+
+/* 8. SEÇÃO INSTITUCIONAL & GUIA DE EXTRAÇÃO
+   -------------------------------------------------------------------------- */
+.institutional {
+  background-color: var(--cor-superficie);
+  border-block: var(--borda-editorial);
+}
+
+.institutional__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--espaco-xl);
+  align-items: start;
+}
+
+.institutional__story p {
+  font-size: 1.05rem;
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-md);
+}
+
+.institutional__dropcap::first-letter {
+  float: left;
+  font-family: var(--fonte-titulo);
+  font-size: 3.4rem;
+  line-height: 0.85;
+  padding-right: 0.6rem;
+  padding-top: 0.2rem;
+  color: var(--cor-destaque);
+  font-weight: 700;
+}
+
+.institutional__quote {
+  margin-top: var(--espaco-lg);
+  padding: var(--espaco-md);
+  background-color: var(--cor-superficie-elevada);
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: 0 var(--raio-sm) var(--raio-sm) 0;
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: 1.12rem;
+}
+
+.institutional__quote footer {
+  margin-top: var(--espaco-xs);
+  font-family: var(--fonte-mono);
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--cor-texto-secundario);
+}
+
+.institutional__pillars {
+  display: grid;
+  gap: var(--espaco-md);
+}
+
+.pillar-card {
+  background-color: var(--cor-superficie-elevada);
+  padding: var(--espaco-md);
+  border-radius: var(--raio-md);
+  border: var(--borda-editorial);
+}
+
+.pillar-card__index {
+  display: inline-block;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--cor-superficie-elevada);
+  background-color: var(--cor-principal);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-card__title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.22rem;
+  margin-bottom: 0.35rem;
+}
+
+.pillar-card__text {
+  font-size: 0.94rem;
+  color: var(--cor-texto-secundario);
+}
+
+/* Guia de Extração */
+.brewing-guide {
+  border-bottom: var(--borda-fina);
+}
+
+.brewing-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-md);
+}
+
+.brewing-step {
+  background-color: var(--cor-superficie-elevada);
+  border: var(--borda-fina);
+  border-top: 4px solid var(--cor-botanico);
+  border-radius: var(--raio-sm);
+  padding: var(--espaco-md);
+}
+
+.brewing-step__header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  color: var(--cor-botanico);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.brewing-step__title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.brewing-step__desc {
+  font-size: 0.92rem;
+  color: var(--cor-texto-secundario);
+}
+
+/* 9. ÁREA DE SIMULAÇÃO DE COMPRA
+   -------------------------------------------------------------------------- */
+.simulation {
+  background:
+    linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-superficie) 100%);
+}
+
+.simulation__layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--espaco-lg);
+  align-items: start;
+}
+
+.simulation-card {
+  background-color: var(--cor-superficie-elevada);
+  border: var(--borda-editorial);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-lg);
+  box-shadow: var(--sombra-editorial);
+}
+
+.simulation-card__badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--espaco-md);
+}
+
+.simulation-card__pill {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.28rem 0.7rem;
+  border-radius: var(--raio-pilula);
+  background-color: var(--cor-superficie);
+  border: var(--borda-fina);
+}
+
+.simulation-card__pill--discount {
+  background-color: var(--cor-botanico);
+  color: var(--cor-superficie-elevada);
+  border-color: var(--cor-botanico);
+}
+
+.simulation-card__heading {
+  font-family: var(--fonte-titulo);
+  font-size: 1.65rem;
+  margin-bottom: var(--espaco-xs);
+}
+
+.simulation-card__intro {
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espaco-md);
+}
+
+.simulation-rules {
+  display: grid;
+  gap: var(--espaco-sm);
+  margin-bottom: var(--espaco-lg);
+}
+
+.simulation-rule {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: var(--espaco-sm);
+  align-items: start;
+  padding: var(--espaco-sm);
+  background-color: var(--cor-fundo);
+  border-radius: var(--raio-sm);
+  border: var(--borda-fina);
+}
+
+.simulation-rule__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--cor-principal);
+  color: var(--cor-ambar);
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.simulation-rule p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+  margin-top: 0.2rem;
+}
+
+.simulation-card__cta-area {
+  padding-top: var(--espaco-sm);
+  border-top: var(--borda-fina);
+}
+
+.simulation-card__cta-hint {
+  margin-top: var(--espaco-xs);
+  text-align: center;
+  font-size: 0.84rem;
+  color: var(--cor-texto-secundario);
+}
+
+/* Painel lateral de referência de preços e recibo */
+.price-sheet {
+  background-color: var(--cor-superficie-elevada);
+  border: var(--borda-editorial);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-md);
+}
+
+.price-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-xs);
+  margin-bottom: 0.35rem;
+}
+
+.price-sheet__title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+}
+
+.price-sheet__tag {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  background-color: var(--cor-superficie);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: var(--borda-fina);
+}
+
+.price-sheet__helper {
+  font-size: 0.88rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espaco-sm);
+}
+
+.price-sheet__list {
+  border-top: var(--borda-fina);
+  margin-bottom: var(--espaco-md);
+}
+
+.price-sheet__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-xs);
+  padding: 0.65rem 0.5rem;
+  border-bottom: var(--borda-fina);
+  font-size: 0.9rem;
+  transition: background-color var(--transicao-padrao);
+}
+
+.price-sheet__item.is-highlighted {
+  background-color: rgba(184, 80, 40, 0.14);
+  border-radius: 4px;
+}
+
+.price-sheet__value {
+  font-family: var(--fonte-mono);
+  color: var(--cor-principal);
+  white-space: nowrap;
+}
+
+/* Registro visual da última simulação */
+.receipt-preview {
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie-elevada);
+  border-radius: var(--raio-md);
+  padding: var(--espaco-md);
+  font-family: var(--fonte-mono);
+  font-size: 0.82rem;
+}
+
+.receipt-preview__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px dashed rgba(246, 241, 231, 0.25);
+}
+
+.receipt-preview__title {
+  color: var(--cor-ambar);
+  font-weight: 700;
+}
+
+.receipt-preview__status {
+  font-size: 0.72rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.receipt-preview__empty {
+  color: #D8CBB8;
+  font-family: var(--fonte-corpo);
+  font-size: 0.86rem;
+}
+
+.receipt-preview__content pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--cor-superficie-elevada);
+}
+
+/* 10. RODAPÉ (FOOTER)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--cor-principal);
+  color: var(--cor-superficie);
+  padding-top: var(--espaco-xl);
+  border-top: 4px solid var(--cor-destaque);
+}
+
+.brand--footer .brand__name {
+  color: var(--cor-superficie-elevada);
+}
+
+.brand--footer .brand__tagline {
+  color: var(--cor-ambar);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: var(--espaco-xl);
+  padding-bottom: var(--espaco-xl);
+  border-bottom: 1px solid rgba(216, 203, 184, 0.2);
+}
+
+.site-footer__slogan {
+  margin-top: var(--espaco-sm);
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  color: var(--cor-ambar);
+}
+
+.site-footer__desc {
+  margin-top: var(--espaco-xs);
+  font-size: 0.92rem;
+  color: #D8CBB8;
+  max-width: 42ch;
+}
+
+.site-footer__heading {
+  font-family: var(--fonte-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cor-ambar);
+  margin-bottom: var(--espaco-sm);
+}
+
+.site-footer__links,
+.site-footer__details {
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  color: #D8CBB8;
+}
+
+.site-footer__links a:hover {
+  color: var(--cor-ambar);
+  text-decoration: underline;
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-sm);
+  padding-block: var(--espaco-md);
+  font-size: 0.86rem;
+  color: #C4B299;
+}
+
+/* 11. RESPONSIVIDADE (MEDIA QUERIES)
+   -------------------------------------------------------------------------- */
+
+/* Notebooks e Tablets em Paisagem (até 1024px) */
+@media (max-width: 1024px) {
+  .roast-status {
+    display: none;
+  }
+
+  .hero__grid,
+  .institutional__grid,
+  .simulation__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tablets em Retrato e Smartphones Grandes (até 768px) */
+@media (max-width: 768px) {
+  .section-padding {
+    padding-block: var(--espaco-xl);
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-superficie-elevada);
+    border-bottom: var(--borda-editorial);
+    padding: var(--espaco-md);
+    box-shadow: var(--sombra-card);
+    display: none;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--espaco-xs);
+  }
+
+  .site-nav__link {
+    display: block;
+    padding: 0.75rem var(--espaco-sm);
+    border-radius: var(--raio-sm);
+  }
+
+  .site-nav__link:hover {
+    background-color: var(--cor-superficie);
+  }
+
+  .site-nav__link--cta {
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .brewing-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-lg);
+  }
+}
+
+/* Smartphones (até 580px) */
+@media (max-width: 580px) {
+  .container {
+    width: min(1200px, 100% - 1.5rem);
+  }
+
+  .top-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .catalog__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .simulation-card {
+    padding: var(--espaco-md);
+  }
+
+  .product-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-card__footer .btn {
+    width: 100%;
+  }
+}
+
+/* 12. PREFERÊNCIA DE MOVIMENTO REDUZIDO
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

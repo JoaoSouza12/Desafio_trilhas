@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VEREDA — Microtorrefação de cafés especiais brasileiros de altitude e artefatos cerâmicos para extração manual. Microlotes rastreáveis da Mantiqueira, Caparaó e Chapada Diamantina.">
+  <title>VEREDA — Microtorrefação de Altitude &amp; Objetos de Extração</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo-vereda.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="topo">
+
+  <!-- Link de acessibilidade para saltar direto ao conteúdo principal -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- Faixa editorial superior: anuncia a regra de desconto sincronizada com o JavaScript -->
+  <div class="top-banner" role="region" aria-label="Condição comercial do Clube de Torra">
+    <div class="container top-banner__inner">
+      <span class="top-banner__badge">FORNADA #44 · SAFRA 2026</span>
+      <p class="top-banner__text">
+        <strong>Clube de Torra Vereda:</strong> Compras a partir de <strong>R$ 180,00</strong> recebem <strong>10% de desconto automático</strong> na simulação.
+      </p>
+      <a class="top-banner__link" href="#simulacao">Simular pedido &rarr;</a>
+    </div>
+  </div>
+
+  <!-- 2.1 CABEÇALHO (HEADER) -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#topo" class="brand" aria-label="Vereda Torrefação — Voltar ao início">
+        <img src="assets/logo-vereda.svg" alt="Emblema topográfico da Vereda Torrefação com sol da alvorada e curvas da serra" class="brand__logo" width="48" height="48">
+        <div class="brand__text">
+          <span class="brand__name">VEREDA</span>
+          <span class="brand__tagline">Microtorrefação &amp; Ritual</span>
+        </div>
+      </a>
+
+      <!-- Elemento visual de destaque da identidade no cabeçalho -->
+      <div class="roast-status" aria-label="Status da torra da semana">
+        <span class="roast-status__dot" aria-hidden="true"></span>
+        <span class="roast-status__label">Torra fresca: Terça-feira · Lotes 86+ SCA</span>
+      </div>
+
+      <!-- Botão de menu compacto para dispositivos móveis -->
+      <button
+        type="button"
+        class="menu-toggle"
+        id="btn-menu-mobile"
+        aria-expanded="false"
+        aria-controls="navegacao-principal"
+        aria-label="Abrir menu de navegação"
+      >
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+
+      <!-- Navegação principal -->
+      <nav class="site-nav" id="navegacao-principal" aria-label="Navegação principal">
+        <ul class="site-nav__list">
+          <li><a href="#catalogo" class="site-nav__link">Safra &amp; Objetos</a></li>
+          <li><a href="#institucional" class="site-nav__link">Nossa Origem</a></li>
+          <li><a href="#ritual-preparo" class="site-nav__link">Guia de Extração</a></li>
+          <li><a href="#simulacao" class="site-nav__link site-nav__link--cta">Simular Compra</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- 2.2 SEÇÃO PRINCIPAL (HERO SECTION) -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="editorial-kicker">
+            <span class="editorial-kicker__code">CADERNO DE SAFRA · 1.190m — 1.420m</span>
+            <span class="editorial-kicker__divider" aria-hidden="true">/</span>
+            <span class="editorial-kicker__origin">Mantiqueira · Caparaó · Chapada</span>
+          </div>
+
+          <h1 id="hero-titulo" class="hero__title">
+            Colhido na neblina das serras altas. Torrado ao compasso de quem sabe esperar.
+          </h1>
+
+          <p class="hero__lead">
+            A <strong>Vereda</strong> é uma microtorrefação autoral dedicada a microlotes brasileiros de pontuação superior a 86 pontos SCA e utensílios cerâmicos desenhados para a filtragem manual sem pressa.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#catalogo" class="btn btn--primary">Explorar Safra &amp; Objetos</a>
+            <a href="#simulacao" class="btn btn--secondary">Ir para Simulação de Compra</a>
+          </div>
+
+          <!-- Indicadores técnicos da curadoria -->
+          <dl class="hero__metrics" aria-label="Indicadores técnicos da curadoria Vereda">
+            <div class="hero__metric">
+              <dt>Altitude dos Sítios</dt>
+              <dd>1.190m a 1.420m</dd>
+            </div>
+            <div class="hero__metric">
+              <dt>Pontuação Sensorial</dt>
+              <dd>86,0 a 89,0 pts SCA</dd>
+            </div>
+            <div class="hero__metric">
+              <dt>Desconto Clube</dt>
+              <dd>10% acima de R$ 180</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__visual">
+          <figure class="hero__figure">
+            <img
+              src="assets/hero-extracao.svg"
+              alt="Gravura técnica da Vereda mostrando coador cerâmico Vértice sobre jarra graduada, ramo botânico de café arábica e curvas topográficas"
+              class="hero__image"
+              width="640"
+              height="560"
+            >
+            <figcaption class="hero__caption">
+              <span>Fig. 01 — Extração gravitacional a 93 °C</span>
+              <span>Proporção recomendada: 1:15</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.3 CATÁLOGO DE PRODUTOS -->
+    <section id="catalogo" class="catalog section-padding" aria-labelledby="catalogo-titulo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__meta">
+            <span class="section-tag">CATÁLOGO DE LOTE NUMERADO</span>
+            <span class="section-number">01 / 04</span>
+          </div>
+          <div class="section-header__main">
+            <div>
+              <h2 id="catalogo-titulo" class="section-title">Safra Atual &amp; Artefatos de Extração</h2>
+              <p class="section-subtitle">
+                Cada café é torrado em lotes de 5 kg e enviado com a data exata da fornada. Os preços abaixo estão integralmente sincronizados com o simulador de pedidos.
+              </p>
+            </div>
+
+            <!-- Filtro funcional por categoria -->
+            <div class="catalog-filters" role="group" aria-label="Filtrar produtos por categoria">
+              <button type="button" class="filter-chip is-active" data-filter="todos">Todos (6)</button>
+              <button type="button" class="filter-chip" data-filter="microlote">Microlotes 250g (4)</button>
+              <button type="button" class="filter-chip" data-filter="artefato">Objetos de Preparo (2)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog__grid" id="grade-produtos">
+
+          <!-- PRODUTO 1 -->
+          <article class="product-card" data-category="microlote" data-product-id="1">
+            <div class="product-card__top-bar">
+              <span class="product-card__code">ITEM 01 · TORRA CLARA</span>
+              <span class="product-card__badge product-card__badge--rare">Edição Rara · 89 SCA</span>
+            </div>
+            <div class="product-card__media">
+              <img
+                src="assets/produto-01-geisha.svg"
+                alt="Embalagem Lote 01 Geisha da Neblina 250g com rótulo verde serra e flor de jasmim"
+                class="product-card__img"
+                width="420"
+                height="340"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Microlote · Serra do Caparaó (1.420m)</span>
+              <h3 class="product-card__title">Lote 01 · Geisha da Neblina (250g)</h3>
+              <p class="product-card__description">
+                Fermentação lenta em cereja sob clima frio de montanha. Entrega notas florais de jasmim, pêssego branco e mel de laranjeira com acidez brilhante.
+              </p>
+              <ul class="product-card__notes" aria-label="Notas sensoriais">
+                <li>Jasmim</li>
+                <li>Pêssego Branco</li>
+                <li>Mel de Laranjeira</li>
+              </ul>
+              <div class="product-card__footer">
+                <div class="product-card__price-block">
+                  <span class="product-card__price-label">Preço unitário</span>
+                  <strong class="product-card__price" data-price="68">R$ 68,00</strong>
+                </div>
+                <a href="#simulacao" class="btn btn--card" data-highlight-product="1">Incluir na Simulação &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 2 -->
+          <article class="product-card" data-category="microlote" data-product-id="2">
+            <div class="product-card__top-bar">
+              <span class="product-card__code">ITEM 02 · TORRA MÉDIA</span>
+              <span class="product-card__badge">86,5 SCA</span>
+            </div>
+            <div class="product-card__media">
+              <img
+                src="assets/produto-02-catuai.svg"
+                alt="Embalagem Lote 02 Catuaí Vermelho Natural 250g com rótulo terracota e ilustração da Mantiqueira"
+                class="product-card__img"
+                width="420"
+                height="340"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Terroir · Mantiqueira de Minas (1.280m)</span>
+              <h3 class="product-card__title">Lote 02 · Catuaí Vermelho Natural (250g)</h3>
+              <p class="product-card__description">
+                Secagem lenta em terreiro suspenso sob sol ameno de inverno. Corpo aveludado e envolvente com notas de caramelo tostado, avelã e cacau 70%.
+              </p>
+              <ul class="product-card__notes" aria-label="Notas sensoriais">
+                <li>Caramelo Tostado</li>
+                <li>Avelã</li>
+                <li>Cacau 70%</li>
+              </ul>
+              <div class="product-card__footer">
+                <div class="product-card__price-block">
+                  <span class="product-card__price-label">Preço unitário</span>
+                  <strong class="product-card__price" data-price="54">R$ 54,00</strong>
+                </div>
+                <a href="#simulacao" class="btn btn--card" data-highlight-product="2">Incluir na Simulação &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 3 -->
+          <article class="product-card" data-category="microlote" data-product-id="3">
+            <div class="product-card__top-bar">
+              <span class="product-card__code">ITEM 03 · TORRA MÉDIA-CLARA</span>
+              <span class="product-card__badge">86,0 SCA</span>
+            </div>
+            <div class="product-card__media">
+              <img
+                src="assets/produto-03-bourbon.svg"
+                alt="Embalagem Lote 03 Bourbon Amarelo Lavado 250g com rótulo marrom cacau e platô da Chapada Diamantina"
+                class="product-card__img"
+                width="420"
+                height="340"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Clássico · Chapada Diamantina (1.350m)</span>
+              <h3 class="product-card__title">Lote 03 · Bourbon Amarelo Lavado (250g)</h3>
+              <p class="product-card__description">
+                Cereja descascado lavado em água de nascente. Xícara extremamente limpa com doçura de caldo de cana, maçã vermelha assada e especiarias doces.
+              </p>
+              <ul class="product-card__notes" aria-label="Notas sensoriais">
+                <li>Caldo de Cana</li>
+                <li>Maçã Assada</li>
+                <li>Canela Suave</li>
+              </ul>
+              <div class="product-card__footer">
+                <div class="product-card__price-block">
+                  <span class="product-card__price-label">Preço unitário</span>
+                  <strong class="product-card__price" data-price="48">R$ 48,00</strong>
+                </div>
+                <a href="#simulacao" class="btn btn--card" data-highlight-product="3">Incluir na Simulação &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 4 -->
+          <article class="product-card" data-category="microlote" data-product-id="4">
+            <div class="product-card__top-bar">
+              <span class="product-card__code">ITEM 04 · PROCESSO HONEY</span>
+              <span class="product-card__badge product-card__badge--rare">Colheita Tardia · 88 SCA</span>
+            </div>
+            <div class="product-card__media">
+              <img
+                src="assets/produto-04-arara.svg"
+                alt="Embalagem Lote 04 Arara Mel de Engenho 250g com rótulo espresso escuro e favo dourado"
+                class="product-card__img"
+                width="420"
+                height="340"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Experimental · Alta Mogiana (1.190m)</span>
+              <h3 class="product-card__title">Lote 04 · Arara Mel de Engenho (250g)</h3>
+              <p class="product-card__description">
+                Secagem com a mucilagem natural do fruto preservada. Revela doçura licorosa de rapadura, tangerina madura e finalização prolongada de amêndoas.
+              </p>
+              <ul class="product-card__notes" aria-label="Notas sensoriais">
+                <li>Rapadura</li>
+                <li>Tangerina Madura</li>
+                <li>Amêndoas</li>
+              </ul>
+              <div class="product-card__footer">
+                <div class="product-card__price-block">
+                  <span class="product-card__price-label">Preço unitário</span>
+                  <strong class="product-card__price" data-price="62">R$ 62,00</strong>
+                </div>
+                <a href="#simulacao" class="btn btn--card" data-highlight-product="4">Incluir na Simulação &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 5 -->
+          <article class="product-card" data-category="artefato" data-product-id="5">
+            <div class="product-card__top-bar">
+              <span class="product-card__code">ITEM 05 · OLARIA AUTORAL</span>
+              <span class="product-card__badge product-card__badge--craft">Feito à Mão</span>
+            </div>
+            <div class="product-card__media">
+              <img
+                src="assets/produto-05-coador.svg"
+                alt="Objeto 05 Coador Vértice em Cerâmica grés tabaco com ranhuras espirais internas"
+                class="product-card__img"
+                width="420"
+                height="340"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Artefato · Grés Queimado a 1.280 °C</span>
+              <h3 class="product-card__title">Objeto 05 · Coador Vértice em Cerâmica</h3>
+              <p class="product-card__description">
+                Modelado individualmente em torno elétrico com argila tabaco da Serra da Mantiqueira. Suas 24 nervuras espirais evitam a obstrução do fluxo e mantêm o calor constante.
+              </p>
+              <ul class="product-card__notes" aria-label="Especificações técnicas">
+                <li>Ângulo 60°</li>
+                <li>Filtros Tam. 02</li>
+                <li>Alta Retenção Térmica</li>
+              </ul>
+              <div class="product-card__footer">
+                <div class="product-card__price-block">
+                  <span class="product-card__price-label">Preço unitário</span>
+                  <strong class="product-card__price" data-price="135">R$ 135,00</strong>
+                </div>
+                <a href="#simulacao" class="btn btn--card" data-highlight-product="5">Incluir na Simulação &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUTO 6 -->
+          <article class="product-card" data-category="artefato" data-product-id="6">
+            <div class="product-card__top-bar">
+              <span class="product-card__code">ITEM 06 · INSTRUMENTO DE PRECISÃO</span>
+              <span class="product-card__badge product-card__badge--craft">Com Termômetro</span>
+            </div>
+            <div class="product-card__media">
+              <img
+                src="assets/produto-06-chaleira.svg"
+                alt="Objeto 06 Chaleira Bico de Ganso Âmbar 600ml em aço inox escovado com cabo ergonômico"
+                class="product-card__img"
+                width="420"
+                height="340"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Instrumento · Aço Inox 304 Escovado</span>
+              <h3 class="product-card__title">Objeto 06 · Chaleira Bico de Ganso Âmbar (600ml)</h3>
+              <p class="product-card__description">
+                Desenvolvida para despejo laminar sem turbulência excessiva na cama de café. Possui termômetro analógico na tampa e cabo contrabalanceado em madeira.
+              </p>
+              <ul class="product-card__notes" aria-label="Especificações técnicas">
+                <li>Capacidade 600ml</li>
+                <li>Termômetro Integrado</li>
+                <li>Bico de Precisão</li>
+              </ul>
+              <div class="product-card__footer">
+                <div class="product-card__price-block">
+                  <span class="product-card__price-label">Preço unitário</span>
+                  <strong class="product-card__price" data-price="210">R$ 210,00</strong>
+                </div>
+                <a href="#simulacao" class="btn btn--card" data-highlight-product="6">Incluir na Simulação &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.4 SEÇÃO INSTITUCIONAL -->
+    <section id="institucional" class="institutional section-padding" aria-labelledby="institucional-titulo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__meta">
+            <span class="section-tag">MANIFESTO &amp; OFÍCIO</span>
+            <span class="section-number">02 / 04</span>
+          </div>
+          <h2 id="institucional-titulo" class="section-title">Por que nunca torramos um grão antes de conhecer a serra onde ele nasceu</h2>
+        </div>
+
+        <div class="institutional__grid">
+          <div class="institutional__story">
+            <p class="institutional__dropcap">
+              Durante décadas, os melhores cafés colhidos nas encostas brasileiras deixavam o país ainda verdes em navios cargueiros, enquanto ao consumidor local restavam torras excessivamente escuras que escondiam defeitos sob o amargor do carvão. A <strong>Vereda</strong> nasceu para interromper esse ciclo.
+            </p>
+            <p>
+              Trabalhamos lado a lado com quatro famílias produtoras no Caparaó, na Mantiqueira de Minas, na Chapada Diamantina e na Alta Mogiana. Compramos micro-lotes colhidos seletivamente à mão apenas quando a cereja atinge o ponto exato de brix, remunerando o produtor acima da cotação comoditizada.
+            </p>
+            <blockquote class="institutional__quote">
+              <p>“Torrar café não é cozinhar grãos em série; é revelar em doze minutos de fogo o que a serra levou doze meses de chuva, sol e neblina para construir.”</p>
+              <footer>— Caderno de Torra Vereda, Fornada #44</footer>
+            </blockquote>
+          </div>
+
+          <div class="institutional__pillars">
+            <article class="pillar-card">
+              <span class="pillar-card__index">01</span>
+              <h3 class="pillar-card__title">Rastreabilidade de Terreiro</h3>
+              <p class="pillar-card__text">
+                Cada pacote informa a altitude exata do talhão, a variedade botânica, o método de secagem e a pontuação na tabela da Specialty Coffee Association (SCA).
+              </p>
+            </article>
+
+            <article class="pillar-card">
+              <span class="pillar-card__index">02</span>
+              <h3 class="pillar-card__title">Microtorra Semanal de 5 kg</h3>
+              <p class="pillar-card__text">
+                Não estocamos café torrado. Nossas fornadas acontecem todas as terças-feiras com perfis de torra clara a média para preservar os açúcares naturais e óleos essenciais.
+              </p>
+            </article>
+
+            <article class="pillar-card">
+              <span class="pillar-card__index">03</span>
+              <h3 class="pillar-card__title">Objetos de Longa Permanência</h3>
+              <p class="pillar-card__text">
+                Nossos coadores cerâmicos e chaleiras não seguem obsolescência programada: são instrumentos calibrados para acompanhar milhares de manhãs.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO COMPLEMENTAR: GUIA TÉCNICO DE EXTRAÇÃO -->
+    <section id="ritual-preparo" class="brewing-guide section-padding" aria-labelledby="ritual-titulo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__meta">
+            <span class="section-tag">PROTOCOLO DE BANCADA</span>
+            <span class="section-number">03 / 04</span>
+          </div>
+          <h2 id="ritual-titulo" class="section-title">A Receita Oficial da Casa para Filtrados</h2>
+          <p class="section-subtitle">
+            Para extrair toda a doçura e limpidez dos nossos microlotes no Coador Vértice, sugerimos três etapas de despejo com água a 93 °C.
+          </p>
+        </div>
+
+        <div class="brewing-steps">
+          <div class="brewing-step">
+            <div class="brewing-step__header">
+              <span class="brewing-step__time">00:00 — 00:40</span>
+              <span class="brewing-step__water">60 ml de água</span>
+            </div>
+            <h3 class="brewing-step__title">1. Pré-infusão (Blooming)</h3>
+            <p class="brewing-step__desc">
+              Com 20g de café moído médio, despeje 60 ml de água em movimentos circulares suaves para liberar o gás carbônico natural da torra recente.
+            </p>
+          </div>
+
+          <div class="brewing-step">
+            <div class="brewing-step__header">
+              <span class="brewing-step__time">00:40 — 01:30</span>
+              <span class="brewing-step__water">+ 120 ml (Total: 180 ml)</span>
+            </div>
+            <h3 class="brewing-step__title">2. Extração de Acidez e Aromas</h3>
+            <p class="brewing-step__desc">
+              Realize o primeiro ataque espiral do centro para as bordas sem tocar no papel filtro, extraindo as notas florais e frutadas mais voláteis.
+            </p>
+          </div>
+
+          <div class="brewing-step">
+            <div class="brewing-step__header">
+              <span class="brewing-step__time">01:30 — 02:45</span>
+              <span class="brewing-step__water">+ 120 ml (Total: 300 ml)</span>
+            </div>
+            <h3 class="brewing-step__title">3. Corpo e Doçura Final</h3>
+            <p class="brewing-step__desc">
+              Finalize com um fluxo central contínuo usando a Chaleira Bico de Ganso até atingir 300 ml. Aguarde o escoamento completo e sirva.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.5 ÁREA DE SIMULAÇÃO DE COMPRA -->
+    <section id="simulacao" class="simulation section-padding" aria-labelledby="simulacao-titulo">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__meta">
+            <span class="section-tag">BANCADA DE PEDIDOS · INTERAÇÃO JAVASCRIPT</span>
+            <span class="section-number">04 / 04</span>
+          </div>
+          <h2 id="simulacao-titulo" class="section-title">Simulador de Compra &amp; Fechamento de Lote</h2>
+          <p class="section-subtitle">
+            Calcule o orçamento completo da sua seleção de cafés e utensílios diretamente pelo navegador.
+          </p>
+        </div>
+
+        <div class="simulation__layout">
+
+          <!-- Painel principal de instruções e botão de ação -->
+          <div class="simulation-card">
+            <div class="simulation-card__badge-row">
+              <span class="simulation-card__pill">Interação via Caixas de Diálogo Nativa</span>
+              <span class="simulation-card__pill simulation-card__pill--discount">10% OFF a partir de R$ 180,00</span>
+            </div>
+
+            <h3 class="simulation-card__heading">Como funciona a simulação de compra</h3>
+            <p class="simulation-card__intro">
+              Ao acionar o botão <strong>"Simular compra"</strong> abaixo, as quantidades desejadas de cada um dos <strong>6 produtos do catálogo</strong> serão solicitadas sequencialmente por meio de caixas de diálogo do navegador (<code>prompt()</code>), e o resumo final detalhado será exibido em uma janela de confirmação (<code>alert()</code>).
+            </p>
+
+            <div class="simulation-rules">
+              <div class="simulation-rule">
+                <span class="simulation-rule__icon" aria-hidden="true">01</span>
+                <div>
+                  <strong>Preenchimento das quantidades:</strong>
+                  <p>Informe um <strong>número inteiro positivo</strong> (ex.: <code>1</code>, <code>2</code>, <code>3</code>) para os itens que deseja adquirir, ou digite <strong><code>0</code></strong> para qualquer produto que não queira incluir no pedido.</p>
+                </div>
+              </div>
+
+              <div class="simulation-rule">
+                <span class="simulation-rule__icon" aria-hidden="true">02</span>
+                <div>
+                  <strong>Validação automática de segurança:</strong>
+                  <p>Valores negativos, números decimais, textos ou campos deixados em branco são considerados inválidos e o sistema solicitará o valor daquele produto novamente. Pressionar <em>Cancelar</em> interrompe a simulação imediatamente.</p>
+                </div>
+              </div>
+
+              <div class="simulation-rule">
+                <span class="simulation-rule__icon" aria-hidden="true">03</span>
+                <div>
+                  <strong>Regra do Desconto Clube de Torra (10%):</strong>
+                  <p>Pedidos cujo subtotal somado atinja <strong>R$ 180,00 ou mais</strong> recebem automaticamente <strong>10% de desconto</strong>. Compras abaixo de R$ 180,00 não recebem desconto, mantendo o valor integral.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botão obrigatório que dispara a simulação JavaScript -->
+            <div class="simulation-card__cta-area">
+              <button type="button" id="btn-simular-compra" class="btn btn--simulate">
+                Simular compra
+              </button>
+              <p class="simulation-card__cta-hint">
+                Abre a sequência interativa de <code>prompt()</code> para os 6 itens e apresenta o resumo em <code>alert()</code>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Painel lateral: Tabela de referência sincronizada + Recibo da última simulação -->
+          <aside class="simulation-sidebar" aria-label="Tabela de preços de referência e histórico da simulação">
+            <div class="price-sheet">
+              <div class="price-sheet__header">
+                <h3 class="price-sheet__title">Tabela Oficial da Fornada</h3>
+                <span class="price-sheet__tag">Valores Sincronizados</span>
+              </div>
+              <p class="price-sheet__helper">
+                Consulte os valores unitários exatos que serão perguntados durante a simulação:
+              </p>
+
+              <ul class="price-sheet__list" id="lista-referencia-precos">
+                <li class="price-sheet__item" data-ref-id="1">
+                  <span class="price-sheet__name">1. Lote 01 · Geisha da Neblina (250g)</span>
+                  <strong class="price-sheet__value">R$ 68,00</strong>
+                </li>
+                <li class="price-sheet__item" data-ref-id="2">
+                  <span class="price-sheet__name">2. Lote 02 · Catuaí Vermelho Natural (250g)</span>
+                  <strong class="price-sheet__value">R$ 54,00</strong>
+                </li>
+                <li class="price-sheet__item" data-ref-id="3">
+                  <span class="price-sheet__name">3. Lote 03 · Bourbon Amarelo Lavado (250g)</span>
+                  <strong class="price-sheet__value">R$ 48,00</strong>
+                </li>
+                <li class="price-sheet__item" data-ref-id="4">
+                  <span class="price-sheet__name">4. Lote 04 · Arara Mel de Engenho (250g)</span>
+                  <strong class="price-sheet__value">R$ 62,00</strong>
+                </li>
+                <li class="price-sheet__item" data-ref-id="5">
+                  <span class="price-sheet__name">5. Objeto 05 · Coador Vértice em Cerâmica</span>
+                  <strong class="price-sheet__value">R$ 135,00</strong>
+                </li>
+                <li class="price-sheet__item" data-ref-id="6">
+                  <span class="price-sheet__name">6. Objeto 06 · Chaleira Bico de Ganso Âmbar</span>
+                  <strong class="price-sheet__value">R$ 210,00</strong>
+                </li>
+              </ul>
+
+              <!-- Registro visual da última simulação (complementa o alert obrigatório) -->
+              <div class="receipt-preview" id="painel-ultimo-resumo" aria-live="polite">
+                <div class="receipt-preview__header">
+                  <span class="receipt-preview__title">REGISTRO DA BANCADA</span>
+                  <span class="receipt-preview__status" id="status-simulacao">Aguardando simulação</span>
+                </div>
+                <p class="receipt-preview__empty" id="texto-resumo-vazio">
+                  Clique em <strong>"Simular compra"</strong> para informar as quantidades e visualizar o resumo oficial via <code>alert()</code> e aqui no registro da bancada.
+                </p>
+                <div class="receipt-preview__content" id="conteudo-ultimo-resumo" hidden></div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 2.6 RODAPÉ (FOOTER) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand">
+          <div class="brand brand--footer">
+            <img src="assets/logo-vereda.svg" alt="Símbolo Vereda Torrefação" class="brand__logo" width="44" height="44">
+            <div class="brand__text">
+              <span class="brand__name">VEREDA</span>
+              <span class="brand__tagline">Microtorrefação &amp; Objetos de Extração</span>
+            </div>
+          </div>
+          <p class="site-footer__slogan">
+            <em>“Da neblina da serra ao compasso da sua xícara.”</em>
+          </p>
+          <p class="site-footer__desc">
+            Curadoria independente de cafés especiais brasileiros de microlote (pontuação 86+ SCA) e artefatos duráveis para filtragem manual.
+          </p>
+        </div>
+
+        <div class="site-footer__nav">
+          <h2 class="site-footer__heading">Navegação Interna</h2>
+          <ul class="site-footer__links">
+            <li><a href="#topo">Início da Página</a></li>
+            <li><a href="#catalogo">Catálogo de Safra &amp; Objetos</a></li>
+            <li><a href="#institucional">Manifesto &amp; Origem</a></li>
+            <li><a href="#ritual-preparo">Protocolo de Extração</a></li>
+            <li><a href="#simulacao">Simulador de Compra</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__info">
+          <h2 class="site-footer__heading">Informações Institucionais</h2>
+          <ul class="site-footer__details">
+            <li><strong>Regiões Parceiras:</strong> Caparaó, Mantiqueira, Chapada Diamantina e Alta Mogiana</li>
+            <li><strong>Ciclo de Torra:</strong> Terças-feiras em lotes numerados de 5 kg</li>
+            <li><strong>Benefício Clube:</strong> 10% de desconto em compras a partir de R$ 180,00</li>
+            <li><strong>Natureza do Projeto:</strong> Loja virtual autoral fictícia desenvolvida para fins educacionais</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">
+          &copy; 2026 <strong>VEREDA — Microtorrefação &amp; Objetos de Extração</strong>. Todos os direitos reservados.
+        </p>
+        <p class="site-footer__author">
+          Projeto desenvolvido por <strong>João</strong> · Trilha <strong>Desenvolvimento Mobile</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
