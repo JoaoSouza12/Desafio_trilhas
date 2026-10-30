@@ -17,8 +17,6 @@
 
   <circle cx="210" cy="88" r="7" fill="#EFE7D8" stroke="#231A16" stroke-width="1.5" />
   <circle cx="210" cy="88" r="2" fill="#231A16" />
-
-  <!-- Rótulo frontal colorido (Ocre Ouro / Chapada) -->
   <rect x="142" y="108" width="136" height="172" rx="4" fill="#5C4338" stroke="#231A16" stroke-width="2" />
   <rect x="148" y="114" width="124" height="160" rx="2" fill="none" stroke="#E5A962" stroke-width="1" />
 
@@ -27,8 +25,6 @@
 
   <text x="210" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#FAF7F2">BOURBON AMARELO</text>
   <text x="210" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#E5A962">Cereja Descascado</text>
-
-  <!-- Símbolo Chapada / Platô -->
   <g transform="translate(210, 206)">
     <polygon points="-24,10 -14,-8 14,-8 24,10" fill="#E5A962" stroke="#231A16" stroke-width="1.4" />
     <line x1="-8" y1="-8" x2="-10" y2="10" stroke="#231A16" stroke-width="1.2" />

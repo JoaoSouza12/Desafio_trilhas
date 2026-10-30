@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 900" width="1280" height="900" role="img" aria-label="Captura de tela da interface da loja virtual Vereda — Microtorrefação e Objetos de Extração">
-  <!-- Moldura de navegador -->
   <rect width="1280" height="900" rx="14" fill="#231A16" />
   <rect x="2" y="2" width="1276" height="42" rx="12" fill="#32251F" />
   <circle cx="24" cy="23" r="6.5" fill="#C85D32" />
@@ -7,18 +6,12 @@
   <circle cx="64" cy="23" r="6.5" fill="#3B5244" />
   <rect x="180" y="11" width="920" height="24" rx="6" fill="#231A16" />
   <text x="640" y="27" text-anchor="middle" font-family="Consolas, monospace" font-size="11" fill="#D8CBB8">index.html — VEREDA · Microtorrefação de Altitude &amp; Objetos de Extração</text>
-
-  <!-- Área de viewport da página -->
   <rect x="2" y="44" width="1276" height="854" fill="#F6F1E7" />
-
-  <!-- Top Banner -->
   <rect x="2" y="44" width="1276" height="34" fill="#231A16" />
   <rect x="80" y="51" width="142" height="20" rx="3" fill="#3B5244" />
   <text x="151" y="65" text-anchor="middle" font-family="Consolas, monospace" font-size="10" font-weight="bold" fill="#FAF7F2">FORNADA #44 · SAFRA 2026</text>
   <text x="240" y="65" font-family="Segoe UI, sans-serif" font-size="12" fill="#FAF7F2">Clube de Torra Vereda: Compras a partir de R$ 180,00 recebem 10% de desconto automático na simulação.</text>
   <text x="1198" y="65" text-anchor="end" font-family="Consolas, monospace" font-size="11" font-weight="bold" fill="#E5A962">Simular pedido →</text>
-
-  <!-- Header -->
   <rect x="2" y="78" width="1276" height="68" fill="#F6F1E7" />
   <line x1="2" y1="146" x2="1278" y2="146" stroke="#231A16" stroke-width="1.5" />
   <circle cx="102" cy="112" r="20" fill="#FAF7F2" stroke="#231A16" stroke-width="2" />
@@ -26,20 +19,14 @@
   <path d="M 86 118 Q 102 110 118 118" fill="none" stroke="#231A16" stroke-width="2" />
   <text x="132" y="110" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#231A16" letter-spacing="2.5">VEREDA</text>
   <text x="132" y="125" font-family="Consolas, monospace" font-size="9.5" fill="#5E4E45">MICROTORREFAÇÃO &amp; RITUAL</text>
-
-  <!-- Pill status no Header -->
   <rect x="410" y="98" width="276" height="28" rx="14" fill="#FAF7F2" stroke="#D8CBB8" />
   <circle cx="426" cy="112" r="4.5" fill="#B85028" />
   <text x="438" y="116" font-family="Consolas, monospace" font-size="10.5" fill="#5C4338">Torra fresca: Terça-feira · Lotes 86+ SCA</text>
-
-  <!-- Links de Navegação -->
   <text x="760" y="116" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#231A16">Safra &amp; Objetos</text>
   <text x="885" y="116" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#231A16">Nossa Origem</text>
   <text x="995" y="116" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold" fill="#231A16">Guia de Extração</text>
   <rect x="1115" y="95" width="115" height="34" rx="6" fill="#231A16" />
   <text x="1172" y="116" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12.5" font-weight="bold" fill="#FAF7F2">Simular Compra</text>
-
-  <!-- Hero Section -->
   <rect x="80" y="176" width="350" height="26" rx="5" fill="#EFE7D8" stroke="#D8CBB8" />
   <text x="92" y="193" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" fill="#B85028">CADERNO DE SAFRA · 1.190m — 1.420m / Mantiqueira · Caparaó</text>
 
@@ -49,16 +36,12 @@
 
   <text x="80" y="366" font-family="Segoe UI, sans-serif" font-size="14.5" fill="#5E4E45">A Vereda é uma microtorrefação autoral dedicada a microlotes brasileiros de pontuação</text>
   <text x="80" y="388" font-family="Segoe UI, sans-serif" font-size="14.5" fill="#5E4E45">superior a 86 pontos SCA e utensílios cerâmicos desenhados para filtragem manual.</text>
-
-  <!-- Botões Hero -->
   <rect x="84" y="414" width="210" height="44" rx="6" fill="#231A16" />
   <rect x="80" y="410" width="210" height="44" rx="6" fill="#B85028" stroke="#231A16" stroke-width="1.5" />
   <text x="185" y="437" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13.5" font-weight="bold" fill="#FAF7F2">Explorar Safra &amp; Objetos</text>
 
   <rect x="306" y="410" width="224" height="44" rx="6" fill="#FAF7F2" stroke="#231A16" stroke-width="1.5" />
   <text x="418" y="437" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13.5" font-weight="bold" fill="#231A16">Ir para Simulação de Compra</text>
-
-  <!-- Métricas Hero -->
   <line x1="80" y1="474" x2="640" y2="474" stroke="#D8CBB8" />
   <text x="80" y="494" font-family="Consolas, monospace" font-size="10" fill="#5E4E45">ALTITUDE DOS SÍTIOS</text>
   <text x="80" y="514" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#231A16">1.190m a 1.420m</text>
@@ -68,8 +51,6 @@
 
   <text x="470" y="494" font-family="Consolas, monospace" font-size="10" fill="#5E4E45">DESCONTO CLUBE</text>
   <text x="470" y="514" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#231A16">10% acima de R$ 180</text>
-
-  <!-- Ilustração Hero à direita -->
   <rect x="706" y="176" width="496" height="350" rx="14" fill="#231A16" />
   <rect x="700" y="170" width="496" height="350" rx="14" fill="#FAF7F2" stroke="#231A16" stroke-width="2" />
   <circle cx="948" cy="325" r="95" fill="#E5A962" fill-opacity="0.28" stroke="#B85028" stroke-dasharray="4 4" />
@@ -83,12 +64,8 @@
   <text x="732" y="497" font-family="Consolas, monospace" font-size="10" fill="#FAF7F2">FIG. 01 — EXTRAÇÃO POR PERCOLAÇÃO GRAVITACIONAL · 93 °C</text>
 
   <line x1="2" y1="546" x2="1278" y2="546" stroke="#231A16" stroke-width="1.5" />
-
-  <!-- Seção de Catálogo de Produtos (Prévia dos 3 primeiros cards da grade) -->
   <text x="80" y="578" font-family="Consolas, monospace" font-size="10.5" font-weight="bold" fill="#B85028">CATÁLOGO DE LOTE NUMERADO — 01 / 04</text>
   <text x="80" y="608" font-family="Georgia, serif" font-size="26" font-weight="bold" fill="#231A16">Safra Atual &amp; Artefatos de Extração</text>
-
-  <!-- Card 1 -->
   <g transform="translate(80, 628)">
     <rect width="352" height="248" rx="10" fill="#FAF7F2" stroke="#231A16" stroke-width="1.5" />
     <rect width="352" height="28" rx="10" fill="#EFE7D8" />
@@ -108,8 +85,6 @@
     <rect x="190" y="200" width="148" height="34" rx="5" fill="#EFE7D8" stroke="#231A16" stroke-width="1.2" />
     <text x="264" y="221" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="bold" fill="#231A16">Incluir na Simulação →</text>
   </g>
-
-  <!-- Card 2 -->
   <g transform="translate(464, 628)">
     <rect width="352" height="248" rx="10" fill="#FAF7F2" stroke="#231A16" stroke-width="1.5" />
     <rect width="352" height="28" rx="10" fill="#EFE7D8" />
@@ -129,8 +104,6 @@
     <rect x="190" y="200" width="148" height="34" rx="5" fill="#EFE7D8" stroke="#231A16" stroke-width="1.2" />
     <text x="264" y="221" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11.5" font-weight="bold" fill="#231A16">Incluir na Simulação →</text>
   </g>
-
-  <!-- Card 3 -->
   <g transform="translate(848, 628)">
     <rect width="352" height="248" rx="10" fill="#FAF7F2" stroke="#231A16" stroke-width="1.5" />
     <rect width="352" height="28" rx="10" fill="#EFE7D8" />

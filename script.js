@@ -1,13 +1,5 @@
-/**
- * VEREDA — Microtorrefação & Objetos de Extração
- * Lógica de Simulação de Compra, Validações e Interações de Interface
- * Desenvolvido com JavaScript Puro (ES6+)
- */
+// Produtos disponíveis na loja e regras de desconto
 
-/* ==========================================================================
-   1. CADASTRO DOS PRODUTOS E REGRAS COMERCIAIS
-   Os nomes e preços abaixo são exatamente iguais aos exibidos no HTML.
-   ========================================================================== */
 const PRODUTOS = [
   {
     id: 1,
@@ -53,15 +45,7 @@ const REGRA_DESCONTO = {
   taxa: 0.10
 };
 
-/* ==========================================================================
-   2. FUNÇÕES UTILITÁRIAS DE FORMATAÇÃO E VALIDAÇÃO
-   ========================================================================== */
-
-/**
- * Formata um valor numérico para o padrão monetário brasileiro (R$).
- * @param {number} valor - Valor numérico a ser formatado.
- * @returns {string} Valor formatado em BRL.
- */
+// Formata número para Real (R$)
 function formatarMoeda(valor) {
   return valor.toLocaleString("pt-BR", {
     style: "currency",
@@ -69,16 +53,7 @@ function formatarMoeda(valor) {
   });
 }
 
-/**
- * Solicita e valida a quantidade desejada de um produto via prompt().
- * Regra explícita para campo vazio: considerado inválido (o usuário deve digitar 0
- * caso não deseje o produto).
- *
- * @param {Object} produto - Objeto do produto cadastrado.
- * @param {number} indiceAtual - Posição do produto (1 a N).
- * @param {number} totalProdutos - Total de produtos no catálogo.
- * @returns {number|null} Quantidade inteira >= 0 ou null se o usuário cancelar.
- */
+// Pede a quantidade de um produto no prompt e valida a entrada
 function solicitarQuantidadeProduto(produto, indiceAtual, totalProdutos) {
   const precoFormatado = formatarMoeda(produto.preco);
 
@@ -91,14 +66,14 @@ function solicitarQuantidadeProduto(produto, indiceAtual, totalProdutos) {
 
     const respostaBruta = prompt(mensagemPrompt);
 
-    // Se o usuário clicou em "Cancelar" (retorna null), interrompe imediatamente
+    // Se clicar em Cancelar, encerra a simulação
     if (respostaBruta === null) {
       return null;
     }
 
     const textoLimpo = respostaBruta.trim();
 
-    // Tratamento explícito para campo em branco
+    // Não aceita o campo vazio
     if (textoLimpo === "") {
       alert(
         "Entrada inválida: o campo foi deixado em branco.\n" +
@@ -107,10 +82,9 @@ function solicitarQuantidadeProduto(produto, indiceAtual, totalProdutos) {
       continue;
     }
 
-    // Conversão obrigatória utilizando Number()
     const quantidade = Number(textoLimpo);
 
-    // Validação: precisa ser um número finito, inteiro e maior ou igual a zero
+    // Verifica se é um número inteiro válido (0 ou maior)
     if (!Number.isFinite(quantidade) || !Number.isInteger(quantidade) || quantidade < 0) {
       alert(
         `Quantidade inválida ("${respostaBruta}").\n` +
@@ -124,17 +98,7 @@ function solicitarQuantidadeProduto(produto, indiceAtual, totalProdutos) {
   }
 }
 
-/* ==========================================================================
-   3. FUNÇÃO PRINCIPAL DE SIMULAÇÃO DE COMPRA
-   ========================================================================== */
-
-/**
- * Atualiza o painel de registro na página com o status da última simulação.
- * Complementa a exibição obrigatória em alert().
- *
- * @param {string} statusTexto - Rótulo curto de status.
- * @param {string} conteudoTexto - Resumo textual detalhado.
- */
+// Atualiza o quadro lateral na página com o último resumo gerado
 function atualizarRegistroBancada(statusTexto, conteudoTexto) {
   const elementoStatus = document.getElementById("status-simulacao");
   const elementoVazio = document.getElementById("texto-resumo-vazio");
@@ -153,19 +117,15 @@ function atualizarRegistroBancada(statusTexto, conteudoTexto) {
   containerConteudo.replaceChildren(blocoPre);
 }
 
-/**
- * Executa a simulação completa de compra para todos os produtos cadastrados.
- */
+// Função principal da simulação de compra
 function simularCompra() {
   const itensPedido = [];
   let somaSubtotais = 0;
 
-  // 1. Solicita a quantidade de cada produto cadastrado em sequência
   for (let i = 0; i < PRODUTOS.length; i++) {
     const produtoAtual = PRODUTOS[i];
     const quantidade = solicitarQuantidadeProduto(produtoAtual, i + 1, PRODUTOS.length);
 
-    // Verifica se o usuário cancelou o prompt()
     if (quantidade === null) {
       const mensagemCancelamento = "Simulação de compra cancelada pelo usuário.";
       alert(mensagemCancelamento);
@@ -173,7 +133,6 @@ function simularCompra() {
       return;
     }
 
-    // Fórmula obrigatória: subtotal = preço × quantidade
     const subtotalProduto = produtoAtual.preco * quantidade;
     somaSubtotais += subtotalProduto;
 
@@ -187,7 +146,7 @@ function simularCompra() {
     }
   }
 
-  // 2. Regra obrigatória quando todas as quantidades forem iguais a zero
+  // Caso todos os produtos tenham recebido quantidade 0
   if (itensPedido.length === 0) {
     const mensagemSemProdutos = "Nenhum produto foi selecionado.";
     alert(mensagemSemProdutos);
@@ -195,12 +154,11 @@ function simularCompra() {
     return;
   }
 
-  // 3. Verificação automática da regra de desconto
+  // Cálculo do desconto para compras a partir de R$ 180,00
   const temDireitoDesconto = somaSubtotais >= REGRA_DESCONTO.valorMinimo;
   const valorDesconto = temDireitoDesconto ? somaSubtotais * REGRA_DESCONTO.taxa : 0;
   const totalFinal = somaSubtotais - valorDesconto;
 
-  // 4. Montagem do resumo da compra conforme o modelo exigido
   const blocosProdutos = itensPedido.map((item) => {
     return (
       `Produto: ${item.nome}\n` +
@@ -232,21 +190,13 @@ function simularCompra() {
     `${blocosProdutos.join("\n\n")}\n\n` +
     `${blocoFinanceiro}`;
 
-  // 5. Exibição obrigatória do resultado utilizando alert()
   alert(resumoFinal);
 
-  // Atualiza também o registro visual de apoio na página
   const statusResumo = temDireitoDesconto ? "Concluída (10% OFF)" : "Concluída (Sem desconto)";
   atualizarRegistroBancada(statusResumo, resumoFinal);
 }
 
-/* ==========================================================================
-   4. INTERAÇÕES DE INTERFACE (MENU MOBILE, FILTROS E DESTAQUE DE ITEM)
-   ========================================================================== */
-
-/**
- * Configura o menu responsivo para dispositivos móveis.
- */
+// Menu mobile
 function inicializarMenuMobile() {
   const botaoMenu = document.getElementById("btn-menu-mobile");
   const navegacao = document.getElementById("navegacao-principal");
@@ -261,7 +211,6 @@ function inicializarMenuMobile() {
     navegacao.classList.toggle("is-open", !estaAberto);
   });
 
-  // Fecha o menu ao clicar em qualquer link de âncora
   const linksNavegacao = navegacao.querySelectorAll("a");
   linksNavegacao.forEach((link) => {
     link.addEventListener("click", () => {
@@ -271,9 +220,7 @@ function inicializarMenuMobile() {
   });
 }
 
-/**
- * Configura a filtragem dinâmica dos produtos no catálogo por categoria.
- */
+// Filtro de categorias do catálogo
 function inicializarFiltrosCatalogo() {
   const botoesFiltro = document.querySelectorAll(".filter-chip");
   const cardsProduto = document.querySelectorAll(".product-card");
@@ -299,9 +246,7 @@ function inicializarFiltrosCatalogo() {
   });
 }
 
-/**
- * Destaca na tabela de referência o produto cujo botão "Incluir na Simulação" foi clicado.
- */
+// Marca o item na lista lateral ao clicar no card do produto
 function inicializarDestaqueReferencia() {
   const botoesCard = document.querySelectorAll("[data-highlight-product]");
   const linhasReferencia = document.querySelectorAll(".price-sheet__item");
@@ -318,9 +263,6 @@ function inicializarDestaqueReferencia() {
   });
 }
 
-/* ==========================================================================
-   5. INICIALIZAÇÃO DOS EVENTOS
-   ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const botaoSimular = document.getElementById("btn-simular-compra");
 

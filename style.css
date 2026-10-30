@@ -1,43 +1,34 @@
-/* ==========================================================================
-   VEREDA — MICROTORREFAÇÃO & OBJETOS DE EXTRAÇÃO
-   Design System Editorial & Artesanal Contemporâneo
-   ========================================================================== */
+/* Estilos da página Vereda */
 
-/* 1. VARIÁVEIS DO DESIGN SYSTEM (:root)
-   -------------------------------------------------------------------------- */
+/* Variáveis de cores, fontes e espaçamentos */
 :root {
-  /* Paleta de Cores Obrigatória */
-  --cor-principal: #231A16;         /* Espresso Profundo / Torra Escura */
-  --cor-secundaria: #5C4338;        /* Casca de Cacau / Argila Tabaco */
-  --cor-destaque: #B85028;          /* Terracota Cereja Madura */
-  --cor-destaque-hover: #963B18;    /* Cereja Torrada Intensa */
-  --cor-fundo: #F6F1E7;             /* Papel Algodão Cru / Pergaminho */
-  --cor-superficie: #EFE7D8;        /* Areia de Terreiro / Kraft Claro */
-  --cor-superficie-elevada: #FAF7F2;/* Porcelana Marfim */
-  --cor-texto-principal: #231A16;   /* Espresso Profundo */
-  --cor-texto-secundario: #5E4E45;  /* Cinza Umburana */
+  --cor-principal: #231A16;
+  --cor-secundaria: #5C4338;
+  --cor-destaque: #B85028;
+  --cor-destaque-hover: #963B18;
+  --cor-fundo: #F6F1E7;
+  --cor-superficie: #EFE7D8;
+  --cor-superficie-elevada: #FAF7F2;
+  --cor-texto-principal: #231A16;
+  --cor-texto-secundario: #5E4E45;
 
-  /* Cores de Apoio da Identidade */
-  --cor-botanico: #3B5244;          /* Verde Folha de Cafeeiro */
-  --cor-ambar: #E5A962;             /* Ocre Mel / Ouro Velho */
-  --cor-borda: #D8CBB8;             /* Linha de Ficha Catalográfica */
-  --cor-borda-forte: #231A16;       /* Traço Editorial Principal */
+  --cor-botanico: #3B5244;
+  --cor-ambar: #E5A962;
+  --cor-borda: #D8CBB8;
+  --cor-borda-forte: #231A16;
 
-  /* Tipografia com Fallbacks Seguros de Sistema */
   --fonte-titulo: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --fonte-corpo: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
   --fonte-mono: "Cascadia Mono", "Consolas", "Courier New", monospace;
 
-  /* Escala de Espaçamentos */
-  --espaco-2xs: 0.375rem; /* 6px */
-  --espaco-xs: 0.625rem;  /* 10px */
-  --espaco-sm: 1rem;      /* 16px */
-  --espaco-md: 1.5rem;    /* 24px */
-  --espaco-lg: 2.25rem;   /* 36px */
-  --espaco-xl: 3.5rem;    /* 56px */
-  --espaco-2xl: 5rem;     /* 80px */
+  --espaco-2xs: 0.375rem;
+  --espaco-xs: 0.625rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2.25rem;
+  --espaco-xl: 3.5rem;
+  --espaco-2xl: 5rem;
 
-  /* Bordas, Raios e Elevação */
   --raio-sm: 6px;
   --raio-md: 12px;
   --raio-lg: 18px;
@@ -48,12 +39,10 @@
   --sombra-editorial: 4px 4px 0 var(--cor-principal);
   --sombra-editorial-hover: 6px 6px 0 var(--cor-principal);
 
-  /* Transições */
   --transicao-padrao: 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* 2. RESET, BASE E ACESSIBILIDADE
-   -------------------------------------------------------------------------- */
+/* Reset básico */
 *,
 *::before,
 *::after {
@@ -133,8 +122,7 @@ code {
   top: var(--espaco-sm);
 }
 
-/* 3. LAYOUT E CONTAINERS GERAIS
-   -------------------------------------------------------------------------- */
+/* Layout geral */
 .container {
   width: min(1200px, 100% - 2.5rem);
   margin-inline: auto;
@@ -200,8 +188,7 @@ code {
   max-width: 60ch;
 }
 
-/* 4. FAIXA SUPERIOR & CABEÇALHO (HEADER)
-   -------------------------------------------------------------------------- */
+/* Topo e cabeçalho */
 .top-banner {
   background-color: var(--cor-principal);
   color: var(--cor-superficie-elevada);
@@ -400,8 +387,7 @@ code {
   transition: transform var(--transicao-padrao), opacity var(--transicao-padrao);
 }
 
-/* 5. BOTÕES E COMPONENTES PADRÃO
-   -------------------------------------------------------------------------- */
+/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -474,8 +460,7 @@ code {
   box-shadow: 2px 2px 0 var(--cor-principal);
 }
 
-/* 6. SEÇÃO PRINCIPAL (HERO SECTION)
-   -------------------------------------------------------------------------- */
+/* Seção Hero */
 .hero {
   padding-block: var(--espaco-xl) var(--espaco-2xl);
   border-bottom: var(--borda-editorial);
@@ -585,8 +570,7 @@ code {
   color: var(--cor-texto-secundario);
 }
 
-/* 7. CATÁLOGO DE PRODUTOS
-   -------------------------------------------------------------------------- */
+/* Catálogo de produtos */
 .catalog-filters {
   display: flex;
   flex-wrap: wrap;
@@ -768,8 +752,7 @@ code {
   line-height: 1.1;
 }
 
-/* 8. SEÇÃO INSTITUCIONAL & GUIA DE EXTRAÇÃO
-   -------------------------------------------------------------------------- */
+/* Seção Institucional e Guia de Preparo */
 .institutional {
   background-color: var(--cor-superficie);
   border-block: var(--borda-editorial);
@@ -893,8 +876,7 @@ code {
   color: var(--cor-texto-secundario);
 }
 
-/* 9. ÁREA DE SIMULAÇÃO DE COMPRA
-   -------------------------------------------------------------------------- */
+/* Simulação de compra */
 .simulation {
   background:
     linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-superficie) 100%);
@@ -1107,8 +1089,7 @@ code {
   color: var(--cor-superficie-elevada);
 }
 
-/* 10. RODAPÉ (FOOTER)
-   -------------------------------------------------------------------------- */
+/* Rodapé */
 .site-footer {
   background-color: var(--cor-principal);
   color: var(--cor-superficie);
@@ -1179,8 +1160,7 @@ code {
   color: #C4B299;
 }
 
-/* 11. RESPONSIVIDADE (MEDIA QUERIES)
-   -------------------------------------------------------------------------- */
+/* Media Queries (Responsividade) */
 
 /* Notebooks e Tablets em Paisagem (até 1024px) */
 @media (max-width: 1024px) {
@@ -1313,8 +1293,7 @@ code {
   }
 }
 
-/* 12. PREFERÊNCIA DE MOVIMENTO REDUZIDO
-   -------------------------------------------------------------------------- */
+/* Acessibilidade de movimento */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -17,8 +17,6 @@
 
   <circle cx="210" cy="88" r="7" fill="#EFE7D8" stroke="#231A16" stroke-width="1.5" />
   <circle cx="210" cy="88" r="2" fill="#231A16" />
-
-  <!-- Rótulo frontal colorido (Espresso / Âmbar Mel) -->
   <rect x="142" y="108" width="136" height="172" rx="4" fill="#231A16" stroke="#231A16" stroke-width="2" />
   <rect x="148" y="114" width="124" height="160" rx="2" fill="none" stroke="#E5A962" stroke-width="1.2" />
 
@@ -27,8 +25,6 @@
 
   <text x="210" y="162" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#FAF7F2">ARARA HONEY</text>
   <text x="210" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#E5A962">Mel de Engenho</text>
-
-  <!-- Símbolo Favo / Gota de Mel -->
   <g transform="translate(210, 206)">
     <polygon points="0,-13 11,-6 11,6 0,13 -11,6 -11,-6" fill="#B85028" stroke="#E5A962" stroke-width="1.5" />
     <circle cx="0" cy="0" r="4" fill="#E5A962" />
